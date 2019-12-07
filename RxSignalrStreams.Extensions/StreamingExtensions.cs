@@ -12,10 +12,10 @@ namespace RxSignalrStreams.Extensions
         /// If the connection is slower than the producer,
         /// The stream will only keep the latest value produced, it will drop other items if any.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="observable"></param>
-        /// <param name="connectionAborted"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">Type of data to stream.</typeparam>
+        /// <param name="observable">Observable of values to listen to.</param>
+        /// <param name="connectionAborted">Cancellation token received from <c>Context.ConnectionAborted</c>.</param>
+        /// <returns>Returns a <see cref="ChannelReader{T}"/> to use as a SignalR stream.</returns>
         public static ChannelReader<T> ToNewestValueStream<T>(
             this IObservable<T> observable,
             CancellationToken connectionAborted
@@ -52,10 +52,10 @@ namespace RxSignalrStreams.Extensions
         /// the stream will keep all the values produced in a buffer,
         /// in order to be used in the stream lately.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="observable"></param>
-        /// <param name="connectionAborted"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">Type of data to stream</typeparam>
+        /// <param name="observable">Observable of values to listen to.</param>
+        /// <param name="connectionAborted">Cancellation token received from <c>Context.ConnectionAborted</c>.</param>
+        /// <returns>Returns a <see cref="ChannelReader{T}"/> to use as a SignalR stream.</returns>
         public static ChannelReader<T> ToBufferedStream<T>(
             this IObservable<T> observable,
             CancellationToken connectionAborted
