@@ -3,18 +3,25 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>RxSignalrStreams.Extensions</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>David Bottiau</Authors>
     <Description>Extensions to use Reactive observable in SignalR streams</Description>
     <Company />
     <PackageProjectUrl>https://github.com/Odonno/RxSignalrStreams.Extensions</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Odonno/RxSignalrStreams.Extensions</RepositoryUrl>
     <PackageTags>Rx Reactive SignalR stream streaming dotnet core buffer Observable</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Threading.Channels" Version="4.7.0" />
     <PackageReference Include="System.Reactive" Version="4.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../LICENSE" Pack="true" Visible="false" PackagePath="" />
+    <None Include="../readme.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
